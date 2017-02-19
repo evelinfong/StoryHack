@@ -11,6 +11,8 @@ const defaultResponses = {
   reply:"What can I help you with?",
   invalidMessage: "Sorry, didn't understand that!",
   failure: "Sorry, something went wrong!",
+  resolve1: "That's great!",
+  resolve2: "Bye, it's nice talking to you!",
   hereYouGo: "Here's a cool article",
   locationInstruction: {
     text: 'Please share your location.',
@@ -67,6 +69,14 @@ const getResponsesForMessage = ({message, userKey}) => {
     } // ADD THIS STATEMENT
     else if(message.text="I am not feeling good"){
       resolve([defaultResponses.reply])
+    }else if(message.text="I am not feeling good"){
+      resolve([defaultResponses.reply])
+    }
+    else if(message.text="I am feeling fabulous"){
+      resolve1([defaultResponses.reply])
+    }
+     else if(message.text="Alright, I have to go."){
+      resolve2([defaultResponses.reply])
     }
     else if(responses.hasOwnProperty(message.text)) {
       resolve([responses[message.text]]);
